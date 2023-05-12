@@ -4,16 +4,21 @@ import './style.css'
 interface ListProps {
   label: string
   items: string[]
+  required: boolean
 }
 
-export function List({label, items}: ListProps) {
+export function List({label, items, required}: ListProps) {
   return (
-    <div>
+    <div className="list">
       <label>{label}</label>
-      <select name="" id="">
+      <select required={required}>
         {items.map(item => {
           return (
-            <option value="">{item}</option>
+            <option 
+              key={item}
+            >
+              {item}
+            </option>
           )
         })}
       </select>
