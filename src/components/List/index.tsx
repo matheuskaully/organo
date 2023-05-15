@@ -5,13 +5,19 @@ interface ListProps {
   label: string
   items: string[]
   required: boolean
+  selectValue: string
+  handleChange: Function
 }
 
-export function List({label, items, required}: ListProps) {
+export function List({label, items, required, selectValue, handleChange}: ListProps) {
   return (
     <div className="list">
       <label>{label}</label>
-      <select required={required}>
+      <select 
+        required={required} 
+        value={selectValue}
+        onChange={event => handleChange(event.target.value)}
+      >
         {items.map(item => {
           return (
             <option 

@@ -1,45 +1,75 @@
-import React from "react"
+import React, { useState } from "react"
 import { Text } from "../Text"
 import { List } from "../List"
 import { Button } from "../Button"
 import './style.css'
 
-export function Form() {
-  const lista = [
-    "Valorant", 
-    "Counter-Strike 2", 
-    "League of Legends",
-    "Fortnite",
-    "Tom Clancy's Rainbow Six Siege"
-  ]
+interface FormProps {
+  handleSubmit: any
+  squadList: string[]
+}
+
+export function Form({handleSubmit, squadList}: FormProps) {
+  // const lista = [
+  //   "Valorant", 
+  //   "Counter-Strike 2", 
+  //   "League of Legends",
+  //   "Fortnite",
+  //   "Tom Clancy's Rainbow Six Siege"
+  // ]
+
+  const [name, setName] = useState('')
+  const [office, setOffice] = useState('')
+  const [image, setImage] = useState('')
+  const [squad, setSquad] = useState('Valorant')
 
   function handleSave(event: { preventDefault: () => void} ) {
     event.preventDefault()
     alert('Card criado com sucesso.')
+    
+    setImage('')
+    setName('')
+    setOffice('')
+    setSquad('Valorant')
+
+    handleSubmit({
+      name,
+      office,
+      image,
+      squad
+    })
   }
 
   return (
     <section className="form">
       <form onSubmit={handleSave}>
         <h2>Preencha os dados para criar o card do colaborador</h2>
-        <Text 
+        <Text
+          inputValue={name} 
+          handleChange={(value: string) => setName(value)}
           label="Nome" 
           placeholder="Digite seu nome" 
           required={true}
         />
-        <Text 
+        <Text
+          inputValue={office}
+          handleChange={(value: string) => setOffice(value)}
           label="Cargo" 
           placeholder="Digite seu cargo"
           required={true}
         />
         <Text 
+          inputValue={image}
+          handleChange={(value: string) => setImage(value)}
           label="Imagem" 
           placeholder="Digite o endereço da imagem" 
         />
         <List 
           label="Time" 
-          items={lista} 
+          items={squadList} 
           required={true}
+          selectValue={squad}
+          handleChange={(value: string) => setSquad(value)}
         />
         <Button>
           Criar card
