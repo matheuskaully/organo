@@ -10,14 +10,6 @@ interface FormProps {
 }
 
 export function Form({handleSubmit, squadList}: FormProps) {
-  // const lista = [
-  //   "Valorant", 
-  //   "Counter-Strike 2", 
-  //   "League of Legends",
-  //   "Fortnite",
-  //   "Tom Clancy's Rainbow Six Siege"
-  // ]
-
   const [name, setName] = useState('')
   const [office, setOffice] = useState('')
   const [image, setImage] = useState('')
