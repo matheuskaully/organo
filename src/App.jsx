@@ -53,6 +53,7 @@ function App() {
             primaryColor={squad.primaryColor}
             secondColor={squad.secondColor}
             squad={squads.map(squad => squad.squadName)}
+            players={player.filter(player => player.squad === squad.squadName)}
           />
         )  
       })}
