@@ -40,8 +40,6 @@ function App() {
     setPlayer([...player, playerData])
   }
 
-  console.log(player)
-
   return (
     <>
       <Banner />
