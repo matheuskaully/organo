@@ -28,7 +28,7 @@ export function Footer() {
       </section>
       <section>
         <p>
-            Desenvolvido Matheus Kaúlly ❤️
+            Desenvolvido por <a target="_blank" href="https://github.com/matheuskaully">Matheus Kaúlly</a> ❤️
         </p>
       </section>
     </footer> 

@@ -18,6 +18,12 @@ export function List({label, items, required, selectValue, handleChange}: ListPr
         value={selectValue}
         onChange={event => handleChange(event.target.value)}
       >
+        <option
+          value="" 
+          disabled
+        >
+          Selecione uma equipe
+        </option>
         {items.map(item => {
           return (
             <option 

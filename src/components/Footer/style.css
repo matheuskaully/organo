@@ -21,6 +21,11 @@
   margin-right: 0;
 }
 
+section a {
+  text-decoration: none;
+  color: #FFF;
+}
+
 @media only screen and (max-device-width: 700px) {
   .footer {
     background: #6278F7;

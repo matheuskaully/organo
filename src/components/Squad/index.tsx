@@ -36,7 +36,7 @@ export function Squad({squadName, primaryColor, secondColor, players}: SquadProp
               name={player.name}
               office={player.office}
               image={player.image}
-              squad={player.squad}
+              bgcolor={primaryColor}
             />
           )
         })}

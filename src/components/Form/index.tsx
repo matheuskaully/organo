@@ -13,7 +13,7 @@ export function Form({handleSubmit, squadList}: FormProps) {
   const [name, setName] = useState('')
   const [office, setOffice] = useState('')
   const [image, setImage] = useState('')
-  const [squad, setSquad] = useState('Valorant')
+  const [squad, setSquad] = useState('')
 
   function handleSave(event: { preventDefault: () => void} ) {
     event.preventDefault()
@@ -35,19 +35,19 @@ export function Form({handleSubmit, squadList}: FormProps) {
   return (
     <section className="form">
       <form onSubmit={handleSave}>
-        <h2>Preencha os dados para criar o card do colaborador</h2>
+        <h2>Preencha os dados para criar o card do jogador</h2>
         <Text
           inputValue={name} 
           handleChange={(value: string) => setName(value)}
-          label="Nome" 
+          label="Nome completo" 
           placeholder="Digite seu nome" 
           required={true}
         />
         <Text
           inputValue={office}
           handleChange={(value: string) => setOffice(value)}
-          label="Cargo" 
-          placeholder="Digite seu cargo"
+          label="Função" 
+          placeholder="Digite sua função"
           required={true}
         />
         <Text 
